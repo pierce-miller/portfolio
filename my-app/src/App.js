@@ -70,20 +70,32 @@ const CardTemplate = ({ title }) => {
   );
 };
 
+const leftSide = () => {
+  return (
+    <Box 
+        elevation= "medium"
+      >
+        <PageHeader
+          title = "Hi, I'm Pierce"
+          subtitle= "Here's some things I've made"
+        />
+      </Box>
+  );
+};
+
 function App() {
   const [dark, setDark] = useState(false);
 
   return (
     <Grommet theme={theme} full themeMode={dark ? "dark" : "light"}>
       <Page>
-        <AppBar>
+        {/* <AppBar>
           <Text size="large">
             My App
           </Text>
           <Button
             icon={dark ? <Moon /> : <Sun />}
             onClick={() => setDark(!dark)}
-            //inside Button attributes JSX => hover
             tip={{
               content: (
                 <Box
@@ -97,13 +109,10 @@ function App() {
               plain: true,
             }}
           />
-        </AppBar>
+        </AppBar> */}
         <PageContent>
-          <PageHeader title="Welcome to Grommet" />
-          <Grid columns="medium" gap="large" pad={{ bottom: "large" }}>
-            <CardTemplate title={"Card1"}/>
-            <CardTemplate title={"Card1"}/>
-            <CardTemplate title={"Card1"}/>
+          <Grid columns = "medium">
+            <leftSide/>
           </Grid>
         </PageContent>
       </Page>

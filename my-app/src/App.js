@@ -17,6 +17,7 @@ import {
   Paragraph,
   ResponsiveContext,
   Text,
+  InfiniteScroll,
 } from "grommet";
 import { Moon, Sun } from "grommet-icons";
 import { deepMerge } from "grommet/utils";
@@ -44,7 +45,6 @@ const AppBar = (props) => (
 );
 
 const CardTemplate = ({ title }) => {
-  const size = useContext(ResponsiveContext);
   return (
     <Card>
       <CardHeader pad="medium">
@@ -53,7 +53,7 @@ const CardTemplate = ({ title }) => {
         </Heading>
       </CardHeader>
       <CardBody pad="medium">
-        <Paragraph maxLines={size === "small" ? 3 : undefined}>
+        <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -70,53 +70,56 @@ const CardTemplate = ({ title }) => {
   );
 };
 
-const leftSide = () => {
-  return (
-    <Box 
-        elevation= "medium"
-      >
-        <PageHeader
-          title = "Hi, I'm Pierce"
-          subtitle= "Here's some things I've made"
-        />
-      </Box>
-  );
-};
-
 function App() {
   const [dark, setDark] = useState(false);
 
   return (
-    <Grommet theme={theme} full themeMode={dark ? "dark" : "light"}>
-      <Page>
+    <Grommet theme={theme} full background={dark ? "dark-1" : "light-2"}>
+      <Box margin="large" height="90%">
+      <Grid 
+        columns="50%"
+        fill="vertical"
+      >
         {/* <AppBar>
-          <Text size="large">
-            My App
-          </Text>
-          <Button
-            icon={dark ? <Moon /> : <Sun />}
-            onClick={() => setDark(!dark)}
-            tip={{
-              content: (
-                <Box
-                  pad="small"
-                  round="small"
-                  background={dark ? "dark-1" : "light-3"}
-                >
-                  {dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
-                </Box>
-              ),
-              plain: true,
-            }}
+        <Text size="large">
+          My App
+        </Text>
+        <Button
+          icon={dark ? <Moon /> : <Sun />}
+          onClick={() => setDark(!dark)}
+          tip={{
+            content: (
+              <Box
+                pad="small"
+                round="small"
+                background={dark ? "dark-1" : "light-3"}
+              >
+                {dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
+              </Box>
+            ),
+            plain: true,
+          }}
+        />
+      </AppBar> */}
+        <Box align="center" justify="center">
+          <PageHeader
+            title="Hi, I'm Pierce."
+            subtitle="Here's some stuff I've made."
           />
-        </AppBar> */}
-        <PageContent>
-          <Grid columns = "medium">
-            <leftSide/>
+
+        </Box>
+        <Box elevation="large" round="small" background={dark ? "dark-2" : "light-1"} pad="medium" align="center" overflow='auto'>
+          <Grid rows="auto" gap="medium">
+            <CardTemplate title={"hello"}/>
+            <CardTemplate title={"hello"}/>
+            <CardTemplate title={"hello"}/>
+            <CardTemplate title={"hello"}/>
+            <CardTemplate title={"hello"}/>
           </Grid>
-        </PageContent>
-      </Page>
-    </Grommet>
+        </Box>
+      </Grid>
+      </Box>
+  </Grommet>
   );
 }
 

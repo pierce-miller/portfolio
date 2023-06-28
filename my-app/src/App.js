@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import {
+  Anchor,
   Box,
   Button,
   Card,
@@ -11,15 +12,15 @@ import {
   grommet,
   Header,
   Heading,
+  Nav,
   Page,
   PageContent,
   PageHeader,
   Paragraph,
   ResponsiveContext,
   Text,
-  InfiniteScroll,
 } from "grommet";
-import { Moon, Sun } from "grommet-icons";
+import { Linkedin,Github } from "grommet-icons";
 import { deepMerge } from "grommet/utils";
 
 const theme = deepMerge(grommet, {
@@ -106,7 +107,10 @@ function App() {
             title="Hi, I'm Pierce."
             subtitle="Here's some stuff I've made."
           />
-
+          <Nav direction="row" background="brand" pad="medium">
+            <Anchor icon={<Linkedin />} href="https://www.linkedin.com/in/pierce-n-miller/" hoverIndicator />
+            <Anchor icon={<Github />} href="https://github.com/pierce-miller" hoverIndicator />
+          </Nav>
         </Box>
         <Box elevation="large" round="small" background={dark ? "dark-2" : "light-1"} pad="medium" align="center" overflow='auto'>
           <Grid rows="auto" gap="medium">

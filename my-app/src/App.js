@@ -114,11 +114,7 @@ function App() {
         </Box>
         <Box elevation="large" round="small" background={dark ? "dark-2" : "light-1"} pad="medium" align="center" overflow='auto'>
           <Grid rows="auto" gap="medium">
-            <CardTemplate title={"hello"}/>
-            <CardTemplate title={"hello"}/>
-            <CardTemplate title={"hello"}/>
-            <CardTemplate title={"hello"}/>
-            <CardTemplate title={"hello"}/>
+            <CardTemplate title="hello"/>
           </Grid>
         </Box>
       </Grid>

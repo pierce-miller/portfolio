@@ -1,5 +1,5 @@
 {
-  "homepage": "http://pierce-miller.github.io/portfolio",
+  "homepage": "https://pierce-miller.github.io/",
   "name": "portfolio",
   "version": "0.1.0",
   "private": false,
@@ -11,7 +11,6 @@
     "grommet-icons": "^4.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.14.1",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.11",
     "web-vitals": "^2.1.4"
@@ -44,6 +43,7 @@
   },
   "devDependencies": {
     "gh-pages": "^5.0.0",
-    "prettier": "2.8.8"
+    "prettier": "2.8.8",
+    "react-router-dom": "^6.14.1"
   }
 }

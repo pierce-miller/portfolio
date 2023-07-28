@@ -55,6 +55,8 @@ const CardTemplate = ({ title }) => {
         </Heading>
       </CardHeader>
       <CardBody pad="medium">
+        <Image>
+        </Image>
         <Paragraph>
           Film Script Generator
         </Paragraph>
